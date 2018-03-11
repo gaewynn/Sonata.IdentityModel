@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonata.IdentityModel", "Sonata.IdentityModel\Sonata.IdentityModel.csproj", "{0557CEEB-868C-4823-9F79-718F32056DCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0557CEEB-868C-4823-9F79-718F32056DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0557CEEB-868C-4823-9F79-718F32056DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0557CEEB-868C-4823-9F79-718F32056DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0557CEEB-868C-4823-9F79-718F32056DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF9DFF3C-F1C7-4793-9F58-902F4C837DC5}
+	EndGlobalSection
+EndGlobal

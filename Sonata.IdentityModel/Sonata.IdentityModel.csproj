@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>gaewynn</Authors>
+    <Company>Sonata</Company>
+    <Description>Sonata.IdentityModel</Description>
+    <Copyright>Copyright @ 2018 Sonata</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Gaewynn/Sonata.IdentityModel</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/gaewynn/Sonata.IdentityModel/master/NuGet/sonata-identitymodel.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Gaewynn/Sonata.IdentityModel</RepositoryUrl>
+    <PackageTags>gaewynn sonata identity model</PackageTags>
+    <RepositoryType>Github</RepositoryType>
+    <NeutralLanguage>English (United States)</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JWT" Version="3.1.1" />
+    <PackageReference Include="Sonata.Diagnostics" Version="1.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.1" />
+  </ItemGroup>
+
+</Project>

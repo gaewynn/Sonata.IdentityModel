@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Sonata.IdentityModel</id>
+    <version>$version$</version>
+    <title>Sonata.IdentityModel</title>
+    <authors>gaewynn</authors>
+    <owners>Sonata</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Gaewynn/Sonata.IdentityModel</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gaewynn/Sonata.IdentityModel/master/NuGet/sonata-identitymodel.png</iconUrl>
+    <description>Sonata.IdentityModel</description>
+    <summary></summary>
+    <copyright>Copyright @ 2018 Sonata</copyright>
+	<tags>gaewynn sonata identity model</tags>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="JWT" version="3.1.1" />
+      <dependency id="System.IdentityModel.Tokens.Jwt" version="5.2.1" />
+      <dependency id="Sonata.Diagnostics" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\Sonata.IdentityModel\bin\$configuration$\netstandard2.0\Sonata.IdentityModel.dll" target="Sonata.IdentityModel.dll" />
+  </files>
+</package>
