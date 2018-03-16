@@ -13,6 +13,7 @@
     <PackageTags>gaewynn sonata identity model</PackageTags>
     <RepositoryType>Github</RepositoryType>
     <NeutralLanguage>English (United States)</NeutralLanguage>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
