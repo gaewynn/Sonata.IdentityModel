@@ -7,7 +7,7 @@ using Sonata.Core.Extensions;
 
 namespace Sonata.IdentityModel
 {
-	public class QimLibIdentityProvider
+	public class IdentityProvider
 	{
 		public static void Setup(string rsaPrivateKey, string encryptionKey)
 		{
