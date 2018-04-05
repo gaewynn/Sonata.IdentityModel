@@ -114,7 +114,7 @@ namespace Sonata.IdentityModel
 
 		internal static void Setup(string rsaPrivateKey, string encryptionKey)
 		{
-			_privateKeyBase64Encoded = rsaPrivateKey;
+			_privateKeyBase64Encoded = rsaPrivateKey ?? PrivateKeyBase64Encoded;
 			_encryptionKey = encryptionKey;
 		}
 

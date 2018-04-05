@@ -11,8 +11,6 @@ namespace Sonata.IdentityModel
 	{
 		public static void Setup(string rsaPrivateKey, string encryptionKey)
 		{
-			if (String.IsNullOrWhiteSpace(rsaPrivateKey))
-				throw new ArgumentNullException(nameof(rsaPrivateKey));
 			if (String.IsNullOrWhiteSpace(encryptionKey))
 				throw new ArgumentNullException(nameof(encryptionKey));
 
@@ -26,6 +24,11 @@ namespace Sonata.IdentityModel
 			}
 
 			ApplicationToken.Setup(rsaPrivateKey, encryptionKey);
+		}
+
+		public static void Setup(string encryptionKey)
+		{
+			Setup(null, encryptionKey);
 		}
 
 		public static void Reset(bool useDefaultKey = false)
