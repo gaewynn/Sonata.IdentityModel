@@ -63,7 +63,7 @@ namespace Sonata.IdentityModel
 			var securityKey = new RsaSecurityKey(BuildProvider());
 			var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.RsaSha256Signature);
 			var header = new System.IdentityModel.Tokens.Jwt.JwtHeader(signingCredentials);
-			var payload = new System.IdentityModel.Tokens.Jwt.JwtPayload {{ ApplicationKeyKey, ApplicationKey}, { UserKey, UserName}};
+			var payload = new System.IdentityModel.Tokens.Jwt.JwtPayload { { ApplicationKeyKey, ApplicationKey }, { UserKey, UserName } };
 
 			if (ExpirationDate.HasValue)
 				payload.Add(ExpirationKey, ExpirationDate.Value);
@@ -71,7 +71,9 @@ namespace Sonata.IdentityModel
 			var jwt = new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(header, payload);
 			var handler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
 
-			return handler.WriteToken(jwt).Encrypt(_encryptionKey);
+			return _encryptionKey == null
+				? handler.WriteToken(jwt)
+				: handler.WriteToken(jwt).Encrypt(_encryptionKey);
 		}
 
 		public static ApplicationToken ValidateToken(string applicationToken)
@@ -93,7 +95,9 @@ namespace Sonata.IdentityModel
 		public static ApplicationToken ReadToken(string applicationToken)
 		{
 			var handler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
-			var token = handler.ReadJwtToken(applicationToken.Decrypt(_encryptionKey));
+			var token = _encryptionKey == null
+				? handler.ReadJwtToken(applicationToken)
+				: handler.ReadJwtToken(applicationToken.Decrypt(_encryptionKey));
 
 			if (!token.Payload.TryGetValue(ApplicationKeyKey, out var applicationKey))
 				throw new SecurityException();
