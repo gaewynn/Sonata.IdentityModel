@@ -9,8 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{A599E3EF
 	ProjectSection(SolutionItems) = preProject
 		NuGet\Build.bat = NuGet\Build.bat
 		NuGet\sonata-identitymodel.png = NuGet\sonata-identitymodel.png
-		NuGet\Sonata.IdentityModel 2.1.0.nuspec = NuGet\Sonata.IdentityModel 2.1.0.nuspec
+		NuGet\Sonata.IdentityModel 2.1.1.nuspec = NuGet\Sonata.IdentityModel 2.1.1.nuspec
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonata.IdentityModel.Tests", "Sonata.IdentityModel.Tests\Sonata.IdentityModel.Tests.csproj", "{EB686569-310D-40DF-B5ED-C8FB972E437A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{0557CEEB-868C-4823-9F79-718F32056DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0557CEEB-868C-4823-9F79-718F32056DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0557CEEB-868C-4823-9F79-718F32056DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB686569-310D-40DF-B5ED-C8FB972E437A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB686569-310D-40DF-B5ED-C8FB972E437A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB686569-310D-40DF-B5ED-C8FB972E437A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB686569-310D-40DF-B5ED-C8FB972E437A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
