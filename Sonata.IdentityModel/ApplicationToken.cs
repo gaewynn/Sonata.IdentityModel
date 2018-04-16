@@ -4,6 +4,7 @@
 
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Linq;
 using System.Security;
 using System.Text;
 
@@ -96,9 +97,27 @@ namespace Sonata.IdentityModel
 			if (!token.Payload.TryGetValue(UserKey, out var userName))
 				throw new SecurityException();
 
-			token.Payload.TryGetValue(ExpirationKey, out var expirationDate);
+			token.Payload.TryGetValue(ExpirationKey, out var expirationDateOrTimeStamp);
 
-			return new ApplicationToken(applicationKey.ToString(), userName.ToString(), (DateTime?)expirationDate);
+			if (expirationDateOrTimeStamp == null)
+				return new ApplicationToken(applicationKey.ToString(), userName.ToString(), null);
+
+			var isTimeStamp = expirationDateOrTimeStamp.ToString().All(char.IsDigit);
+			if (!isTimeStamp)
+			{
+				if (DateTime.TryParse(expirationDateOrTimeStamp.ToString(), out var expirationDate))
+					return new ApplicationToken(applicationKey.ToString(), userName.ToString(), expirationDate);
+
+				throw new SecurityException("The specified token does not contain a valid expiration date.");
+			}
+
+			var unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+			var unixTimeStampInTicks = long.Parse(expirationDateOrTimeStamp.ToString()) * TimeSpan.TicksPerSecond;
+
+			return new ApplicationToken(
+				applicationKey.ToString(), 
+				userName.ToString(), 
+				new DateTime(unixStart.Ticks + unixTimeStampInTicks, DateTimeKind.Utc));
 		}
 
 		internal static void Reset()

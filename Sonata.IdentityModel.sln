@@ -9,10 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{A599E3EF
 	ProjectSection(SolutionItems) = preProject
 		NuGet\Build.bat = NuGet\Build.bat
 		NuGet\sonata-identitymodel.png = NuGet\sonata-identitymodel.png
-		NuGet\Sonata.IdentityModel 2.1.1.nuspec = NuGet\Sonata.IdentityModel 2.1.1.nuspec
+		NuGet\Sonata.IdentityModel 2.1.2.nuspec = NuGet\Sonata.IdentityModel 2.1.2.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonata.IdentityModel.Tests", "Sonata.IdentityModel.Tests\Sonata.IdentityModel.Tests.csproj", "{EB686569-310D-40DF-B5ED-C8FB972E437A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sonata.IdentityModel.Tests", "Sonata.IdentityModel.Tests\Sonata.IdentityModel.Tests.csproj", "{EB686569-310D-40DF-B5ED-C8FB972E437A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -56,5 +56,17 @@ namespace Sonata.IdentityModel.Tests
 			Assert.Equal("gaewynn", deserializedToken.UserName);
 			Assert.Equal(new DateTime(1983, 7, 13), deserializedToken.ExpirationDate);
 		}
+
+		[Fact]
+		public void TokenContainsAllInformationWithTimeStampAsExpirationDate()
+		{
+			const string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBLZXkiOiJTb25hdGEiLCJ1c2VyIjoiZ2Fld3lubiIsImV4cCI6MTgzODk3MTkyNX0.0uFixMQZJKlSHAu-zJoxZbJS2bx7fCiK6a10vszdon4";
+			var applicationToken = ApplicationToken.ReadToken(token);
+
+			Assert.Equal("Sonata", applicationToken.ApplicationKey);
+			Assert.Equal("gaewynn", applicationToken.UserName);
+			Assert.NotNull(applicationToken.ExpirationDate);
+			Assert.Equal(new DateTime(2028, 4, 10), applicationToken.ExpirationDate.Value.Date);
+		}
 	}
 }
